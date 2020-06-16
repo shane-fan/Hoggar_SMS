@@ -12,5 +12,6 @@ export default function AddStudentField({
   placeholder,
   field,
 }: IStudentParams): JSX.Element {
+  // eslint-disable-next-line
   return <TextField label={label} placeholder={placeholder} {...field} />;
 }

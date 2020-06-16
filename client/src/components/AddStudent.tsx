@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { Formik, Form, Field } from "formik";
 import AddStudentField from "./AddStudentField";
 
-interface Values {
+export interface Values {
   firstName: string;
   lastName: string;
   age: number;
@@ -11,13 +11,11 @@ interface Values {
   email: string;
 }
 
-interface IAddStudentProps {
+export interface IAddStudentProps {
   onSubmit: (values: Values) => void;
 }
 
-export default function AddStudent({
-  onSubmit,
-}: IAddStudentProps): JSX.Element {
+export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
   const initialFormValues: Values = {
     firstName: "",
     lastName: "",
@@ -27,59 +25,99 @@ export default function AddStudent({
   };
 
   return (
-    <Formik
-      initialValues={initialFormValues}
-      onSubmit={(values, { resetForm }) => {
-        onSubmit(values);
-        resetForm();
+    <div
+      style={{
+        backgroundColor: "white",
+        margin: "auto",
+        position: "relative",
+        top: "100px",
+        width: "350px",
+        height: "380px",
+        borderRadius: "10px",
       }}
     >
-      {({ values }) => (
-        <Form>
-          <div>
-            <Field
-              name="firstName"
-              placeholder="First Name"
-              component={AddStudentField}
-              label="First Name"
-            />
+      <div
+        style={{
+          position: "relative",
+          textAlign: "left",
+          top: "20px",
+          left: "20px",
+          padding: "15px",
+        }}
+      >
+        <Typography variant="h6" gutterBottom>
+          Add a Student
+        </Typography>
+      </div>
+      <Formik
+        initialValues={initialFormValues}
+        onSubmit={(values, { resetForm }) => {
+          onSubmit(values);
+          resetForm();
+        }}
+      >
+        {() => (
+          <div
+            style={{
+              position: "relative",
+              left: "70px",
+            }}
+          >
+            <Form>
+              <div>
+                <Field
+                  name="firstName"
+                  placeholder="First Name"
+                  component={AddStudentField}
+                  label="First Name"
+                />
+              </div>
+              <div>
+                <Field
+                  name="lastName"
+                  placeholder="Last Name"
+                  component={AddStudentField}
+                  label="Last Name"
+                />
+              </div>
+              <div>
+                <Field
+                  name="age"
+                  placeholder="Age"
+                  component={AddStudentField}
+                  label="Age"
+                />
+              </div>
+              <div>
+                <Field
+                  name="grade"
+                  placeholder="Grade"
+                  component={AddStudentField}
+                  label="Grade"
+                />
+              </div>
+              <div>
+                <Field
+                  name="email"
+                  placeholder="E-mail"
+                  component={AddStudentField}
+                  label="E-mail"
+                />
+              </div>
+              <div
+                style={{
+                  position: "relative",
+                  textAlign: "right",
+                  paddingTop: "20px",
+                  left: "-85px",
+                }}
+              >
+                <Button type="submit">Submit</Button>
+              </div>
+            </Form>
           </div>
-          <div>
-            <Field
-              name="lastName"
-              placeholder="Last Name"
-              component={AddStudentField}
-              label="Last Name"
-            />
-          </div>
-          <div>
-            <Field
-              name="age"
-              placeholder="Age"
-              component={AddStudentField}
-              label="Age"
-            />
-          </div>
-          <div>
-            <Field
-              name="grade"
-              placeholder="Grade"
-              component={AddStudentField}
-              label="Grade"
-            />
-          </div>
-          <div>
-            <Field
-              name="email"
-              placeholder="E-mail"
-              component={AddStudentField}
-              label="E-mail"
-            />
-          </div>
-          <Button type="submit">Submit</Button>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
-        </Form>
-      )}
-    </Formik>
+        )}
+      </Formik>
+    </div>
   );
 }

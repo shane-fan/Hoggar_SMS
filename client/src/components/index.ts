@@ -1,5 +1,5 @@
 import StudentTable from "./StudentTable";
-import AddStudent from "./AddStudent";
+import AddStudentButton from "./AddStudentButton";
 
 export { StudentTable };
-export { AddStudent };
+export { AddStudentButton };

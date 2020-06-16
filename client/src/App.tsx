@@ -3,15 +3,7 @@ import axios from "axios";
 import { generate } from "shortid";
 import "./App.css";
 
-import { StudentTable, AddStudent } from "./components";
-import { StudentData } from "./types";
-
-// interface IStudentDataResponse {
-//   sex: number;
-//   eyeColour: string;
-//   name: string;
-//   age: number;
-// }
+import { AddStudentButton, StudentTable } from "./components";
 
 // export async function getStudents(): Promise<StudentData> {
 //   const { data } = await axios.get<IStudentDataResponse>(
@@ -28,7 +20,7 @@ function App(): JSX.Element {
     {
       id: "45",
       firstName: "test",
-      lastName: "last",
+      lastName: "ladasdast",
       age: 6,
       grade: "1",
       email: "eadwad@sadsadas.com",
@@ -36,7 +28,7 @@ function App(): JSX.Element {
   ]);
   return (
     <div className="App">
-      <AddStudent
+      <AddStudentButton
         onSubmit={(data) => {
           setRows((currentRows) => [
             {
