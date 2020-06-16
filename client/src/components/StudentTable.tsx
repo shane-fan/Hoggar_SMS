@@ -6,16 +6,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { StudentData } from "../types";
 
 interface StudentList {
-  rows: Array<{
-    id: string;
-    firstName: string;
-    lastName: string;
-    age: number;
-    grade: number;
-    email: string;
-  }>;
+  rows: Array<StudentData>;
 }
 
 export default function StudentTable({ rows }: StudentList): JSX.Element {

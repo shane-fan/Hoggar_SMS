@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -23,21 +23,19 @@ import { StudentData } from "./types";
 // }
 
 function App(): JSX.Element {
-  const students: StudentData[] = [];
+  const [rows, setRows] = useState([
+    {
+      id: "45",
+      firstName: "test",
+      lastName: "last",
+      age: 6,
+      grade: 1,
+      email: "eadwad@sadsadas.com",
+    },
+  ]);
   return (
     <div className="App">
-      <StudentTable
-        rows={[
-          {
-            id: "45",
-            firstName: "test",
-            lastName: "last",
-            age: 6,
-            grade: 1,
-            email: "eadwad@sadsadas.com",
-          },
-        ]}
-      />
+      <StudentTable rows={rows} />
     </div>
   );
 }
