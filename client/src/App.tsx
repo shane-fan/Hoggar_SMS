@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { generate } from "shortid";
 import "./App.css";
 
-import { StudentTable } from "./components";
+import { StudentTable, AddStudent } from "./components";
 import { StudentData } from "./types";
 
 // interface IStudentDataResponse {
@@ -29,12 +30,23 @@ function App(): JSX.Element {
       firstName: "test",
       lastName: "last",
       age: 6,
-      grade: 1,
+      grade: "1",
       email: "eadwad@sadsadas.com",
     },
   ]);
   return (
     <div className="App">
+      <AddStudent
+        onSubmit={(data) => {
+          setRows((currentRows) => [
+            {
+              id: generate(),
+              ...data,
+            },
+            ...currentRows,
+          ]);
+        }}
+      />
       <StudentTable rows={rows} />
     </div>
   );

@@ -3,6 +3,6 @@ export type StudentData = {
   firstName: string;
   lastName: string;
   age: number;
-  grade: number;
+  grade: string;
   email: string;
 };
