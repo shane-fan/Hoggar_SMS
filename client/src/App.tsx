@@ -3,7 +3,7 @@ import axios from "axios";
 import { generate } from "shortid";
 import "./App.css";
 
-import { AddStudentButton, StudentTable } from "./components";
+import { AddStudentButton, StudentTable, Navbar } from "./components";
 
 // export async function getStudents(): Promise<StudentData> {
 //   const { data } = await axios.get<IStudentDataResponse>(
@@ -18,6 +18,7 @@ import { AddStudentButton, StudentTable } from "./components";
 function App(): JSX.Element {
   const [rows, setRows] = useState([
     {
+      // Feed MySQL database through here using axios, replace placeholder data
       id: "45",
       firstName: "test",
       lastName: "ladasdast",
@@ -28,6 +29,7 @@ function App(): JSX.Element {
   ]);
   return (
     <div className="App">
+      <Navbar />
       <AddStudentButton
         onSubmit={(data) => {
           setRows((currentRows) => [

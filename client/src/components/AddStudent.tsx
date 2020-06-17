@@ -31,7 +31,7 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
         margin: "auto",
         position: "relative",
         top: "100px",
-        width: "350px",
+        width: "335px",
         height: "380px",
         borderRadius: "10px",
       }}
@@ -40,9 +40,10 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
         style={{
           position: "relative",
           textAlign: "left",
-          top: "20px",
-          left: "20px",
-          padding: "15px",
+          top: "15px",
+          left: "0px",
+          padding: "20px 10px 5px 20px",
+          backgroundColor: "#3f51b59c",
         }}
       >
         <Typography variant="h6" gutterBottom>
@@ -61,13 +62,14 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
             style={{
               position: "relative",
               left: "70px",
+              padding: "10px",
             }}
           >
             <Form>
               <div>
                 <Field
                   name="firstName"
-                  placeholder="First Name"
+                  placeholder="Ex: John"
                   component={AddStudentField}
                   label="First Name"
                 />
@@ -75,7 +77,7 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
               <div>
                 <Field
                   name="lastName"
-                  placeholder="Last Name"
+                  placeholder="Ex: Doe"
                   component={AddStudentField}
                   label="Last Name"
                 />
@@ -83,7 +85,7 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
               <div>
                 <Field
                   name="age"
-                  placeholder="Age"
+                  placeholder="Ex: 3, 4, 5..."
                   component={AddStudentField}
                   label="Age"
                 />
@@ -91,7 +93,7 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
               <div>
                 <Field
                   name="grade"
-                  placeholder="Grade"
+                  placeholder="Ex: JK, SK, 1..."
                   component={AddStudentField}
                   label="Grade"
                 />
@@ -99,7 +101,7 @@ export function AddStudent({ onSubmit }: IAddStudentProps): JSX.Element {
               <div>
                 <Field
                   name="email"
-                  placeholder="E-mail"
+                  placeholder="Ex: name@address.com"
                   component={AddStudentField}
                   label="E-mail"
                 />
